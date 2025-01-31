@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { Box, Button, CircularProgress, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
@@ -7,11 +7,16 @@ import { CopyAllRounded, SendRounded } from '@mui/icons-material'; // Import ico
 import './App.css';
 
 function App() {
+
   const [emailContent, setEmailContent] = useState('');
   const [tone, setTone] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [generatedReply, setGeneratedReply] = useState('');
+
+
+ 
+
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -65,7 +70,7 @@ function App() {
           multiline
           rows={8} // Set the number of rows for the input field
           variant='outlined'
-          label="Original Email Content"
+          label="Email Content"
           value={emailContent || ''}
           onChange={(e) => setEmailContent(e.target.value)}
           InputProps={{
