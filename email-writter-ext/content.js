@@ -83,7 +83,7 @@ function createAIButtonWithDropdown() {
             const emailContent = getEmailContent();
             const selectedTone = dropdown.value; // Get selected tone
 
-            const response = await fetch('http://localhost:8080/api/email/generate', {
+            const response = await fetch('https://itchy-bovid-rohit-karma-2f23a9d7.koyeb.app/api/email/generate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
